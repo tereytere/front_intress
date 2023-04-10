@@ -5,7 +5,7 @@ function Signin() {
     const [repo, setRepo] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/apisignin/list')
+        fetch('http://127.0.0.1:8000/api/signins.json')
         .then(response => response.json())
     
         .then(repo => 

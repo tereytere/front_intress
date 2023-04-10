@@ -5,7 +5,7 @@ function Personal() {
     const [repo, setRepo] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/apipersonal/list')
+        fetch('http://127.0.0.1:8000/api/personals.json')
         .then(response => response.json())
     
         .then(repo => 
