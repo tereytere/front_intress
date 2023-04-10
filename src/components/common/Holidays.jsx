@@ -5,7 +5,7 @@ function Holidays() {
     const [repo, setRepo] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/holidays')
+        fetch('http://127.0.0.1:8000/api/holidays.json')
         .then(response => response.json())
     
         .then(repo => 
