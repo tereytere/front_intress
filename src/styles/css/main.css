@@ -1,1 +1,85 @@
-/*# sourceMappingURL=main.css.map */
+header {
+  background-color: white;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  top: 0;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  header .container {
+    padding: 0px 15px;
+  }
+}
+header .container .navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+header .container .navbar .nav-links li .option {
+  color: black;
+  font-family: "arial";
+  text-transform: uppercase;
+  font-size: 14px;
+  text-decoration: none;
+  list-style: none;
+}
+@media screen and (max-width: 767px) {
+  header .container .navbar .nav-links li .option {
+    color: black;
+    margin-bottom: 15px;
+    display: block;
+  }
+}
+header .container .navbar .logo {
+  width: 130px;
+}
+@media screen and (max-width: 767px) {
+  header .container .navbar .logo {
+    width: 90px;
+  }
+}
+header .container .navbar .logo img {
+  width: 100%;
+}
+header .container .navbar .menu {
+  display: flex;
+  gap: 1em;
+  text-decoration: none;
+  list-style: none;
+}
+@media screen and (max-width: 767px) {
+  header .container .navbar .menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    left: 0;
+    top: 69px;
+    text-align: center;
+    padding: 25px 0;
+  }
+}
+header .container .navbar #checkbox_toggle {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  header .container .navbar #checkbox_toggle:checked ~ .menu {
+    display: block;
+  }
+}
+header .container .navbar .hamburger {
+  display: none;
+  font-size: 28px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: black;
+}
+@media screen and (max-width: 767px) {
+  header .container .navbar .hamburger {
+    display: block;
+  }
+}/*# sourceMappingURL=main.css.map */
