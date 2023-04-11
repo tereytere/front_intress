@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../api/axios';
+import Routes from './routes';
 
 
 const LOGIN_URL = '/api/login_check'
@@ -47,8 +48,9 @@ function Login() {
     <>
         {success ? (
                 <section className='success'>
-                    <h2>¡Has iniciado sesión!</h2>
-                    <a href='#' className='btn-login'>Ve al inicio</a>
+                    <p>Bienvenido!</p>
+                    <button>Cerrar sesión</button>
+                    <Routes user={user} />
                 </section> 
             ) : (
                 <section>
