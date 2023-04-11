@@ -21,5 +21,3 @@ const Routes = ({ user }) => (
     <Redirect to="/" />
   </Router>
 );
-
-export default Routes;

@@ -1,89 +1,89 @@
-import React, { useState } from 'react';
-import axios from '../api/axios';
-import Routes from './routes';
+// import React, { useState } from 'react';
+// import axios from '../api/axios';
+// import Routes from './routes';
 
 
-const LOGIN_URL = '/api/login_check'
+// const LOGIN_URL = '/api/login_check'
 
-function Login() {
+// function Login() {
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [errMsg, setErrMsg] = useState('')
-    const [success, setSuccess] = useState (false)
+//     const [username, setUsername] = useState('')
+//     const [password, setPassword] = useState('')
+//     const [errMsg, setErrMsg] = useState('')
+//     const [success, setSuccess] = useState (false)
 
-    const handleSubmit = async(e) => {
-        e.preventDefault()
-        try{
-            const response = await axios.post(LOGIN_URL, JSON.stringify({username: username, password: password}),
-            {
-                headers: {'Content-Type' : 'application/json'},
-                withCredentials: true
-            }
-         )
+//     const handleSubmit = async(e) => {
+//         e.preventDefault()
+//         try{
+//             const response = await axios.post(LOGIN_URL, JSON.stringify({username: username, password: password}),
+//             {
+//                 headers: {'Content-Type' : 'application/json'},
+//                 withCredentials: true
+//             }
+//          )
 
-                const accessToken = response.data
-                const user = { username: username, accessToken: accessToken}
+//                 const accessToken = response.data
+//                 const user = { username: username, accessToken: accessToken}
                 
 
-                const storedToken = window.localStorage.setItem(
-                    'loggedAppUser', JSON.stringify(user)
-                )
-                console.log(storedToken)
+//                 const storedToken = window.localStorage.setItem(
+//                     'loggedAppUser', JSON.stringify(user)
+//                 )
+//                 console.log(storedToken)
 
-                setUsername('');
-                setPassword('');
-                setSuccess(true);
+//                 setUsername('');
+//                 setPassword('');
+//                 setSuccess(true);
 
-                console.log('Estas logeada')
+//                 console.log('Estas logeada')
 
-        }catch (err){
+//         }catch (err){
 
-                console.log('No funciona')
+//                 console.log('No funciona')
 
-        }
-    }
+//         }
+//     }
 
-  return (
-    <>
-        {success ? (
-                <section className='success'>
-                    <p>Bienvenido!</p>
-                    <button>Cerrar sesión</button>
-                    <Routes user={user} />
-                </section> 
-            ) : (
-                <section>
-                    <h1>Plataforma de Fichaje</h1>
-                        <div className='box-fichaje'>
-                            <form onSubmit={handleSubmit}>
-                                <label htmlFor='username'>username</label>
-                                <input
-                                    type='text'
-                                    id='username'
-                                    autoComplete='off'
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    value={username}
-                                    required
-                                />
+//   return (
+//     <>
+//         {success ? (
+//                 <section className='success'>
+//                     <p>Bienvenido!</p>
+//                     <button>Cerrar sesión</button>
+//                     <Routes user={user} />
+//                 </section> 
+//             ) : (
+//                 <section>
+//                     <h1>Plataforma de Fichaje</h1>
+//                         <div className='box-fichaje'>
+//                             <form onSubmit={handleSubmit}>
+//                                 <label htmlFor='username'>username</label>
+//                                 <input
+//                                     type='text'
+//                                     id='username'
+//                                     autoComplete='off'
+//                                     onChange={(e) => setUsername(e.target.value)}
+//                                     value={username}
+//                                     required
+//                                 />
 
-                                <label htmlFor='password'>Contraseña</label>
-                                <input
-                                    type='password'
-                                    id='password'
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    value={password}
-                                    required
-                                />
-                                <button className='btn'>Entrar</button>
-                            </form>
+//                                 <label htmlFor='password'>Contraseña</label>
+//                                 <input
+//                                     type='password'
+//                                     id='password'
+//                                     onChange={(e) => setPassword(e.target.value)}
+//                                     value={password}
+//                                     required
+//                                 />
+//                                 <button className='btn'>Entrar</button>
+//                             </form>
 
-                            <a href="#" className='btn-password'>Recuperar Contraseña</a>
-                        </div>
-                </section>
-            )}
-    </>
-  )
-}
+//                             <a href="#" className='btn-password'>Recuperar Contraseña</a>
+//                         </div>
+//                 </section>
+//             )}
+//     </>
+//   )
+// }
 
-export default Login
+// export default Login

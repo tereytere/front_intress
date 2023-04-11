@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
+import instance from "../../api/apis";
 
 function Workshops() {
     
-    const [repo, setRepo] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/workshops.json')
-        .then(response => response.json())
-    
-        .then(repo => 
-            setRepo(repo) )// Establece el valor de 'repo' primero
-             // Puedes dejar esto aquí si quieres, pero no es necesari)
-        .catch(error => console.error(error));
-        
+      async function fetchData() {
+         
+          const response = await instance.get('/workshops')
+          setData(response.data['hydra:member']);
+          // console.log(response.data['hydra:member'])
+  
+      }
+  
+      fetchData();
     }, []);
 
   return (
     <div>
-        {repo.map(int => {
+        {data.map(int => {
                 return(
                     <div key={int.id}>
                         <h3>{int.name}</h3>

@@ -9,7 +9,12 @@ import Login from './pages/Login';
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Holidays/>
+      <Personal />
+      <Workshops/>
+      <Documents />
+      <Signin/>
+      
     </div>
   );
 }
