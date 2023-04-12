@@ -5,6 +5,7 @@ import Personal from './components/common/Personal';
 import NavbarMaster from './components/header/NavbarMaster';
 import Signin from './components/common/Signin';
 import Workshops from './components/common/Workshops';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <NavbarMaster />
       <Holidays />
       <Personal />
-      <Signin />
-      <Workshops />
+      <Workshops/>
+      <Signin/>
+      
     </div>
   );
 }
