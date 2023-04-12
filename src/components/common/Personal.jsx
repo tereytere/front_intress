@@ -16,14 +16,15 @@ function Personal() {
     }, []);
 
   return (
-    <div>
+    <div className='card' >
         {repo.map(int => {
                 return(
-                    <div key={int.id}>
-                        <h3>{int.name}</h3>
-                        <p>{int.surname}</p> 
-                        <p>{int.image}</p> 
-                        <p>{int.rol}</p> 
+                    <div className='card-body' key={int.id}>
+                        <h3 className='card-title'>{int.name}</h3>
+                        <p className='card-title'>{int.surname}</p>
+                        <p className='card-title'>{int.rol}</p>  
+                        <img className='card-img' src={int.image} alt={int.name} /> 
+                        
                     </div>
                 )
             })} 
